@@ -1,35 +1,31 @@
 <template>
-     <header class="navbar">
+  <header class="navbar">
     <div class="navbar-container">
       <SubscribeButton />
       <SearchBar />
       <PrimaryButton />
     </div>
   </header>
-    
 </template>
 
 <script setup>
-    import SubscribeButton from './SubscribeButton.vue';
-    import SearchBar from './SearchBar.vue';
-    import PrimaryButton from './PrimaryButton.vue';
-
+import SubscribeButton from "./SubscribeButton.vue";
+import SearchBar from "./SearchBar.vue";
+import PrimaryButton from "./PrimaryButton.vue";
 </script>
-
-
 
 <style scoped>
 .navbar {
-    position: sticky;
+  position: sticky;
   top: 0;
   background-color: #121212;
   color: white;
   padding: 10px 0;
   flex-direction: row;
-	flex-wrap: wrap;
-    align-items: stretch;
-    width: 100%;
-    z-index: 100;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+  z-index: 100;
 }
 
 .navbar-container {
@@ -39,8 +35,5 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  width: 100%;
 }
-
-
 </style>

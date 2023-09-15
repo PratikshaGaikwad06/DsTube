@@ -1,30 +1,31 @@
 <template>
   <div class="video-card">
-    <img :src="thumbnail" alt="Video Thumbnail" class="thumbnail" />
+    <img :src="imgSrc" alt="Video Thumbnail" class="thumbnail" />
     <div class="video-info">
       <h2 class="video-title">{{ title }}</h2>
+      <h5 class="views">{{ views }}</h5>
       <div class="video-details">
-        <p class="channel-name">{{ channel }}</p>
-        <p class="views">{{ views }}</p>
+        <p class="channel-name">{{ channel.firstname }} {{ channel.lastname }}</p>
+        <!-- <p class="views">{{ views }}</p> -->
       </div>
       <p class="description">{{ description }}</p>
-      <button @click="removeVideo" class="remove-button">Remove</button>
+      <SecondaryButton/>
+      <!-- <button @click="removeVideo" class="remove-button">Remove</button> -->
     </div>
   </div>
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from 'vue';
-
-const props = defineProps({
-  thumbnail: String,
+import SecondaryButton from './SecondaryButton.vue';
+defineProps({
+  imgSrc: String,
   title: String,
-  channel: String,
+  channel: Object,
   views: String,
   description: String,
 });
 
-const { emit } = defineEmits();
+defineEmits();
 
 const removeVideo = () => {
    // emit('remove', videoId);
@@ -33,29 +34,37 @@ const removeVideo = () => {
 
 <style scoped>
 .video-card {
-  display: block;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  display: flex;
+  background-color: black;
+  border: 1px solid;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   border-radius: 3px;
   overflow: hidden;
-  margin: 10px 0;
-  max-width: 600px;
+  /* max-width: 1850px; */
+  margin: 60px;
 }
 
 .thumbnail {
-  width: 180px;
-  height: 100%;
+  flex : 0 0 auto;
+  overflow: hidden;
+  /* width: 180px; */
+  /* width: 250px; */
+  height: 250px;
+  /* height: 100%; */
   object-fit: cover;
 }
 
 .video-info {
   padding: 16px;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .video-title {
-  font-size: 18px;
+  color: #fff;
+  font-size: 25px;
   font-weight: bold;
   margin: 0;
 }
@@ -63,7 +72,7 @@ const removeVideo = () => {
 .video-details {
   display: flex;
   margin-top: 8px;
-  color: #666;
+  color: #fff;
   font-size: 14px;
 }
 
@@ -72,13 +81,15 @@ const removeVideo = () => {
 }
 
 .views {
-  flex-grow: 1;
+  color: #fff;
+  margin: 1px;
+  /* flex-grow: 1; */
 }
 
 .description {
   margin-top: 8px;
   font-size: 14px;
-  color: #333;
+  color: #fff;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -88,9 +99,10 @@ const removeVideo = () => {
 
 .remove-button {
   margin-top: 8px;
-  background-color: #ff0000;
+  max-width: 100px;
+  background-color: black;
   color: #fff;
-  border: none;
+  border: 1px solid white;
   border-radius: 3px;
   padding: 6px 12px;
   font-size: 14px;
@@ -99,6 +111,6 @@ const removeVideo = () => {
 }
 
 .remove-button:hover {
-  background-color: #cc0000;
+  background-color: grey;
 }
 </style>

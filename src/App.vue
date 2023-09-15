@@ -1,14 +1,19 @@
 <template>
   <div class="main-container">
-    <Header/>
-    <!-- <div style="height: 1000px;">Your page content here</div> -->
-    <MainBody/>
+    <!-- <Header/>
+    <MainBody/>  -->
+    <Home/>
+    <View/>
+    <UserProfile/>
   </div>
 </template>
 
 <script setup>
-import Header from "./Components/Header.vue";
 import MainBody from "./Components/MainBody.vue";
+import Home from "./Components/Home.vue";
+import View from "./Components/View.vue";
+import UserProfile from "./Components/UserProfile.vue";
+
 </script>
 
 <style>
