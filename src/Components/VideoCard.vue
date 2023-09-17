@@ -9,14 +9,16 @@
         <!-- <p class="views">{{ views }}</p> -->
       </div>
       <p class="description">{{ description }}</p>
-      <SecondaryButton/>
+      <SecondaryButton :title="remove"/>
       <!-- <button @click="removeVideo" class="remove-button">Remove</button> -->
     </div>
   </div>
 </template>
 
 <script setup>
+import {ref} from 'vue';
 import SecondaryButton from './SecondaryButton.vue';
+const remove=ref("REMOVE");
 defineProps({
   imgSrc: String,
   title: String,
@@ -24,6 +26,8 @@ defineProps({
   views: String,
   description: String,
 });
+
+
 
 defineEmits();
 

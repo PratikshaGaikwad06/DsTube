@@ -3,7 +3,8 @@
     <div class="navbar-container">
       <SubscribeButton />
       <SearchBar />
-      <PrimaryButton />
+      <PrimaryButton :title="home"/>
+      <PrimaryButton :title="profile"/>
     </div>
   </header>
 </template>
@@ -12,6 +13,9 @@
 import SubscribeButton from "./SubscribeButton.vue";
 import SearchBar from "./SearchBar.vue";
 import PrimaryButton from "./PrimaryButton.vue";
+import {ref} from 'vue';
+const home = ref("Home");
+const profile = ref("Profile");
 </script>
 
 <style scoped>

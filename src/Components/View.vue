@@ -1,10 +1,10 @@
 <template>
-        <Header/>
+        <ViewHeader/>
         <ExtendedVideoCard/>
 </template>
 
 <script setup>
-import Header from './Header.vue';
+import ViewHeader from './ViewHeader.vue';
 import ExtendedVideoCard from './ExtendedVideoCard.vue';
 </script>
 

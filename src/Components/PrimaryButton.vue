@@ -1,11 +1,21 @@
 <template>
-  <div class="primary-btn">
-      Profile
+  <div >
+    <button class="primary-btn" @click="btnClickEvent">{{ title }}</button>
+      <!-- Profile -->
+      <!-- {{ title }} -->
       <!-- {{ data }} -->
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+defineProps({
+  title : String
+});
+const emit = defineEmits(['btn-click-event']);
+const btnClickEvent=()=>{
+    emit('btn-click-event', true);
+}
+</script>
 
 <style scoped>
 .primary-btn {

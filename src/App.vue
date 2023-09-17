@@ -9,7 +9,6 @@
 </template>
 
 <script setup>
-import MainBody from "./Components/MainBody.vue";
 import Home from "./Components/Home.vue";
 import View from "./Components/View.vue";
 import UserProfile from "./Components/UserProfile.vue";
